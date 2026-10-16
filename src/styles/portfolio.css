@@ -1,0 +1,331 @@
+/* =========================================================================
+   portfolio.css — the "View all work" page: quiet editorial case studies.
+   ========================================================================= */
+
+/* Page header */
+.portfolio-hero {
+  padding-top: calc(var(--nav-h) + clamp(64px, 10vw, 120px));
+  padding-bottom: clamp(48px, 6vw, 80px);
+}
+
+.portfolio-hero-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 760px;
+}
+
+.portfolio-hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 1.02;
+}
+
+.portfolio-hero p {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  max-width: 620px;
+}
+
+.portfolio-count {
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+/* Index rail — jump links to each project */
+.portfolio-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-block: 22px;
+  border-block: 1px solid var(--line);
+  position: sticky;
+  top: var(--nav-h);
+  background: var(--bg);
+  z-index: 50;
+  transition: background-color 0.45s ease;
+}
+
+.portfolio-index a {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease),
+    background-color 0.25s var(--ease);
+}
+
+.portfolio-index a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ---------- Case study blocks ---------- */
+.case-studies {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(88px, 12vw, 150px);
+  padding-block: clamp(64px, 8vw, 110px);
+}
+
+.case {
+  scroll-margin-top: calc(var(--nav-h) + 70px);
+}
+
+.case-media {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+/* Screenshots are shown at their natural ratio so no part of the build is cropped out */
+.case-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 1.4s var(--ease);
+}
+
+.case:hover .case-media img {
+  transform: scale(1.025);
+}
+
+.case-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.case-index {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.case-cat {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.case h2 {
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  margin: 10px 0 16px;
+}
+
+.case-summary {
+  font-size: 1.08rem;
+  color: var(--text-dim);
+  max-width: 680px;
+}
+
+/* What I did + detail grid */
+.case-body {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(36px, 5vw, 72px);
+  margin-top: 44px;
+}
+
+.case-role {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 22px;
+  max-width: 560px;
+}
+
+.case-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.case-actions li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.case-actions li::before {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 0.68em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.75;
+}
+
+.case-block h3 {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 14px;
+}
+
+.case-block + .case-block {
+  margin-top: 34px;
+}
+
+/* Tools chips */
+.case-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-tools .tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Reflection cards — challenge / solution / outcome */
+.case-reflections {
+  margin-top: 44px;
+  display: grid;
+  gap: 14px;
+}
+
+.reflection {
+  padding: 26px 28px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--elevated);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.reflection:hover {
+  border-color: var(--blush);
+  transform: translateY(-2px);
+}
+
+.reflection-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.reflection-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blush);
+}
+
+.reflection p {
+  font-size: 0.97rem;
+  color: var(--text-dim);
+  max-width: 760px;
+}
+
+/* Case footer links */
+.case-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease),
+    gap 0.3s var(--ease);
+}
+
+.project-link:hover {
+  background: var(--accent);
+  color: #fff;
+  gap: 14px;
+}
+
+.project-link svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.project-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+/* Back to top / home */
+.portfolio-end {
+  display: flex;
+  justify-content: center;
+  padding-bottom: clamp(70px, 9vw, 120px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .case-body {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .portfolio-index {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .case-media {
+    border-radius: 20px;
+    aspect-ratio: 4 / 3;
+  }
+  .reflection {
+    padding: 22px;
+  }
+}

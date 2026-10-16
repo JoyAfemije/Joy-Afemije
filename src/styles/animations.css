@@ -1,0 +1,41 @@
+/* =========================================================================
+   Animations.css — gentle keyframes + reduced-motion overrides.
+   Component transitions live in components.css / portfolio.css.
+   ========================================================================= */
+
+/* Soft breathing pulse for the "available" dot */
+@keyframes pulseDot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--accent-soft);
+  }
+  50% {
+    box-shadow: 0 0 0 7px var(--accent-soft);
+  }
+}
+
+.pulse-dot {
+  animation: pulseDot 2.8s ease-in-out infinite;
+}
+
+/* =========================================================================
+   Reduced-motion — honour the visitor's OS preference
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .pulse-dot {
+    animation: none !important;
+  }
+}
