@@ -17,6 +17,9 @@ export default function Navbar() {
     'skills',
     'tools',
     'projects',
+    'testimonials',
+    'faqs',
+    'collaborate',
     'contact',
   ]);
 

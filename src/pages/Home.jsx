@@ -4,6 +4,9 @@ import About from '../components/About';
 import Skills from '../components/Skills';
 import Tools from '../components/Tools';
 import Projects from '../components/Projects';
+import Testimonials from '../components/Testimonials';
+import Faqs from '../components/Faqs';
+import Collaboration from '../components/Collaboration';
 import Contact from '../components/Contact';
 
 export default function Home() {
@@ -15,6 +18,9 @@ export default function Home() {
       <Skills />
       <Tools />
       <Projects />
+      <Testimonials />
+      <Faqs />
+      <Collaboration />
       <Contact />
     </main>
   );

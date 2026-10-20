@@ -11,6 +11,9 @@ export default function Footer() {
           © {footerMeta.year}
           <Wordmark />
           All rights reserved.
+          <span className="footer-credit" aria-hidden="true">
+            Designed by <Wordmark />
+          </span>
         </span>
         <div className="footer-socials">
           <Link to="/portfolio" aria-label="View all work" title="All work">

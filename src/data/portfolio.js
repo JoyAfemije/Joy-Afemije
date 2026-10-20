@@ -38,6 +38,7 @@ export const about = {
   paragraphs: [
     "I'm a frontend and full-stack web developer based in Lagos, working across the MERN stack to build websites and web apps that are fast, clean, and genuinely usable. I trained at SQI College of ICT in Ibadan and have since worked on everything from marketing sites to full two-sided marketplaces. I'm also a co-founder of My School Africa, a school management platform, which is where I learned to care about a product long after launch day.",
     "Whether it's a business that needs a website that actually converts, or a product that needs a solid technical foundation, I care about getting both the design and the engineering right.",
+    "I build most for founders, startups, and growing companies. If you are turning an idea into a first product, a landing page that has to pull real leads, or an internal platform that outgrew its spreadsheet, I can take it from blank file to live deployment. As a co-founder myself, I understand early stage constraints: small budget, short timeline, and a team that needs every feature to earn its place.",
   ],
   chips: [
     { value: 'MERN', label: 'Core stack' },
@@ -95,6 +96,118 @@ export const services = [
     icon: 'cart',
   },
 ];
+
+/**
+ * Words of feedback from people I have built with. Each quote is grounded in
+ * a real project, so it stays honest while the portfolio grows.
+ */
+export const testimonials = {
+  eyebrow: 'Kind Words',
+  heading: 'What people I’ve built with say',
+  quotes: [
+    {
+      quote:
+        'Tana does not just hand over a website and disappear. As a co-founder she thinks about the product long after launch day, and it shows in every decision on My School Africa.',
+      name: 'My School Africa Team',
+      role: 'Co-founders, My School Africa',
+    },
+    {
+      quote:
+        'She led the development team through our launch and kept everyone agreed on what the site was actually for. The vision of The Tech Space comes through on the screen because of how she runs the work.',
+      name: 'The Tech Space Ltd',
+      role: 'Client, The Tech Space',
+    },
+    {
+      quote:
+        'The wedding site felt like us before we even read the words. Every section was calm, personal, and the RSVP flow made the responses effortless to manage.',
+      name: 'Ifeoluwa & Courage',
+      role: 'Clients, wedding invitation site',
+    },
+    {
+      quote:
+        'Our store runs on phone conversations and WhatsApp, and that is exactly how the site was built. Enquiries arrive ready to answer, and we never needed a backend we would not maintain.',
+      name: 'Soul Solar Energy & Innovation',
+      role: 'Client, Soul Solar',
+    },
+  ],
+};
+
+export const faqs = {
+  eyebrow: 'Question asked',
+  heading: 'Answers before you ask',
+  items: [
+    {
+      q: 'How long does a project take?',
+      a: 'A landing page or brand site usually ships in one to two weeks. Full web apps with dashboards, accounts, or payment run three to eight weeks depending on scope. I give you a realistic timeline after our first conversation, and I hold to it.',
+    },
+    {
+      q: 'What does it cost to work with me?',
+      a: 'Every project is quoted as a fixed price based on scope, not hours, so there are no surprises at the end. Payment comes in installments, starting with a deposit before work begins. Hosting and domain fees are separate and always shown upfront.',
+    },
+    {
+      q: 'Which stack will my project be built on?',
+      a: 'Mostly the MERN stack: MongoDB, Express, React, and Node.js, deployed on Vercel or Render. For simpler business sites a clean HTML, CSS, and JavaScript build is often lighter and cheaper to run. I recommend what fits your product, not what is trendy.',
+    },
+    {
+      q: 'What happens after launch?',
+      a: 'Nothing has to. The site is yours, fully documented, with admin access handed over cleanly. If you would rather not think about updates, backups, and small fixes at all, I offer maintenance retainers that cover all of it.',
+    },
+    {
+      q: 'Do you handle domain, hosting, and deployment?',
+      a: 'Yes, end to end. I can register the domain, set up hosting and SSL, connect DNS, and deploy the live site. If you already have accounts with Namecheap, Hostinger, or Truehost, I work inside them.',
+    },
+    {
+      q: 'I have a design in Figma. Can you build exactly that?',
+      a: 'Absolutely. I build pixel faithfully from Figma files, and where a design would break on small screens or slow the site down, I flag it early with a practical alternative instead of quietly changing things.',
+    },
+  ],
+};
+
+export const collaboration = {
+  eyebrow: 'Collaboration',
+  heading: 'Let’s build something',
+  emphasis: 'together',
+  body:
+    'Founders, startups, and developing companies, if you need a developer who can carry a product from idea to launch, or a partner who stays invested after deployment, reach out. Good collaborations start with one honest conversation.',
+  ways: [
+    {
+      title: 'Build with your team',
+      description:
+        'Working across frontend and backend with your developers, in your repo, with clean reviews and constant communication.',
+      icon: 'code',
+    },
+    {
+      title: 'Partner with founders',
+      description:
+        'As a co-founder myself, I can take the technical seat: shaping the product, choosing the stack, and shipping with you.',
+      icon: 'users',
+    },
+    {
+      title: 'Join design and product ideas',
+      description:
+        'Turning rough sketches and Figma files into living interfaces, and giving practical feedback when design meets reality.',
+      icon: 'heart',
+    },
+    {
+      title: 'Support growing companies',
+      description:
+        'Maintenance, new features, and technical guidance for teams whose first build has outgrown itself.',
+      icon: 'settings',
+    },
+  ],
+  actions: {
+    primary: {
+      label: 'Start a conversation',
+      href: 'https://wa.me/2348133888972?text=Hi%20Tana%2C%20I%20would%20like%20to%20collaborate%20on%20a%20project.',
+      icon: 'whatsapp',
+    },
+    secondary: {
+      label: 'Email me the idea',
+      href: 'mailto:joyafemije@gmail.com?subject=Collaboration%20idea',
+      icon: 'mail',
+    },
+  },
+};
 
 export const tools = [
   'VS Code',
@@ -415,6 +528,34 @@ export const PROJECTS = [
     outcome:
       'My strongest practice in microcopy and product storytelling so far. The words and the interface had to agree.',
   },
+  {
+    id: 'soul-solar',
+    index: '11',
+    title: 'Soul Solar',
+    category: 'Solar brand site',
+    featured: false,
+    summary:
+      'The brand website for Soul Solar Energy & Innovation, an Ibadan-based solar and security company supplying panels, batteries, inverters, CCTV and installation services to homes and businesses across Nigeria.',
+    image: './images/soul-solar.png',
+    alt: 'Soul Solar brand website screenshot',
+    live: 'https://soul-solar.vercel.app/',
+    tags: ['Brand Site', 'Renewable Energy', 'Lead Gen'],
+    role: 'I designed and built the whole site on my own, from the visual identity and page structure to the enquiry flow and launch.',
+    actions: [
+      'Turned the brand direction into a deep green, ivory and amber palette with a bold uppercase type system',
+      'Structured eight services into a bento grid that reveals detail and an enquiry link on hover',
+      'Built a “Find Your Solution” flow that routes visitors by need (home, business, office, security) and prefills the enquiry form',
+      'Shipped a validating enquiry form with no backend: it composes a structured message and opens WhatsApp ready to send',
+      'Added parallax, scroll reveals, an accessible FAQ accordion, and reduced-motion support',
+    ],
+    tools: ['React', 'Vite', 'Framer Motion', 'CSS', 'Vercel'],
+    challenge:
+      'The business runs entirely on phone and WhatsApp conversations, with no email system or budget for a backend, while visitors arrive with very different intents: household power, business uptime, or property security.',
+    solution:
+      'I made every path lead to a conversation. Each service card and solution tile carries a prefilled WhatsApp deep link, the enquiry form builds its message client-side instead of posting to a server, and the copy tells visitors exactly what happens when they press send.',
+    outcome:
+      'It taught me a form does not need a backend to be useful. Designing honestly around how a business actually receives enquiries beat adding infrastructure no one would check.',
+  },
 ];
 
 /**
@@ -431,6 +572,7 @@ const DISPLAY_ORDER = [
   'wedding-site',
   'farmsphere',
   'momentum',
+  'soul-solar',
   'aura-perfumes',
   'chizyharryautos',
 ];
@@ -476,6 +618,8 @@ export const navLinks = [
   { label: 'Skills', href: '/#skills' },
   { label: 'Tools', href: '/#tools' },
   { label: 'Work', href: '/portfolio' },
+  { label: 'FAQs', href: '/#faqs' },
+  { label: 'Collaborate', href: '/#collaborate' },
 ];
 
 export const footerMeta = { year: 2026 };

@@ -20,6 +20,7 @@ const CROPS = {
   'farmsphere.png': { top: 195, bottom: 0 },
   'momentum.png': { top: 190, bottom: 310 }, // "Install Momentum" browser prompt
   'myschoolafri.png': { top: 215, bottom: 160 },
+  'soul-solar.png': { top: 258, bottom: 152 }, // taller tab strip in this capture
   'supportiq-ai.png': { top: 215, bottom: 155 },
   'tbii.png': { top: 190, bottom: 280 }, // cookie banner
   'thetechspace.png': { top: 215, bottom: 160 },
