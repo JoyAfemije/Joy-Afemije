@@ -26,6 +26,19 @@ const fadeUp = (delay) => ({
   transition: { duration: 0.8, delay, ease: [0.22, 0.8, 0.26, 1] },
 });
 
+// The mask is exactly one line-height tall, and Fraunces descenders are
+// taller than the 1.02 leading, so the box is extended (and paid back with
+// negative margin) before overflow:hidden slices the tail off words like
+// "Designing".
+const wordMask = {
+  display: 'inline-block',
+  overflow: 'hidden',
+  verticalAlign: 'bottom',
+  marginRight: '0.26em',
+  paddingBottom: '0.14em',
+  marginBottom: '-0.14em',
+};
+
 export default function Hero() {
   // If public/images/tana.png isn't there yet, keep the elegant monogram.
   const [portraitFailed, setPortraitFailed] = useState(false);
@@ -54,12 +67,7 @@ export default function Hero() {
               <span
                 key={`${word}-${i}`}
                 aria-hidden="true"
-                style={{
-                  display: 'inline-block',
-                  overflow: 'hidden',
-                  verticalAlign: 'bottom',
-                  marginRight: '0.26em',
-                }}
+                style={wordMask}
               >
                 <motion.span
                   variants={wordVariant}

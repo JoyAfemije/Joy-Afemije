@@ -26,7 +26,9 @@
   max-width: 620px;
 }
 
-.portfolio-count {
+/* Extra class so the count isn't overridden by the equally-tagged
+   ".portfolio-hero p" rule above, which wins on specificity. */
+.portfolio-hero .portfolio-count {
   font-size: 0.74rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -35,6 +37,8 @@
 
 /* Index rail — jump links to each project */
 .portfolio-index {
+  width: min(100%, var(--wrap));
+  margin-inline: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -117,7 +121,9 @@
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--text-mute);
+  /* --text-mute fails AA at this size on both themes, especially the tags
+     line in the case footer. */
+  color: var(--text-dim);
 }
 
 .case h2 {
@@ -315,17 +321,55 @@
     grid-template-columns: 1fr;
     gap: 36px;
   }
+  /* A wrapped static grid stacked into 9 rows and ate the whole first screen,
+     so the rail becomes a single horizontally scrollable strip with snap. */
   .portfolio-index {
-    position: static;
+    position: sticky;
+    top: var(--nav-h);
+    /* Edge to edge: the nav is a full-width child of <main> here, and its
+      own gutter padding keeps the resting pills aligned with the hero. */
+    width: auto;
+    margin-inline: 0;
+    padding-inline: var(--gutter);
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    padding-block-end: 18px;
+    /* Snap lines up with the padded edge, so the resting first pill stays
+       aligned with the hero instead of flush to the screen edge. */
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .portfolio-index::-webkit-scrollbar {
+    display: none;
+  }
+  .portfolio-index a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 18px;
+    white-space: nowrap;
   }
 }
 
 @media (max-width: 600px) {
+  /* A forced 4/3 box against natural-ratio images (all ~2:1) left a large
+     blank band under every screenshot, so the media keeps its natural height. */
   .case-media {
     border-radius: 20px;
-    aspect-ratio: 4 / 3;
   }
   .reflection {
     padding: 22px;
+  }
+  /* Fraunces at 1.02 leading clipped descenders on wrapped mobile lines. */
+  .portfolio-hero h1 {
+    line-height: 1.12;
+  }
+  .case h2 {
+    line-height: 1.15;
   }
 }
