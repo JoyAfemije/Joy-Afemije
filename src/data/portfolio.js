@@ -2,7 +2,7 @@
 // copy and links are easy to update without touching component code.
 
 export const brand = {
-  name: 'CodeWithTana',
+  name: 'ETANA',
   role: 'Frontend & Full-Stack Developer',
   location: 'Lagos, Nigeria',
   headline: 'Designing calm, beautiful software with intention.',

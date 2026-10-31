@@ -51,40 +51,30 @@
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
+  min-height: 44px;
   font-family: var(--font-sans);
   font-size: 0.95rem;
   color: var(--text);
   white-space: nowrap;
 }
 
-/* ---------- Wordmark: CodeWithTana ----------
-   Two matching italic serif halves, a tiny tracked "With" as the connector,
-   and a closing accent dot that carries the old code.with.tana mark. */
+/* ---------- Wordmark: ETANA ----------
+   One uppercase serif word in the accent color, closed by the signature dot
+   carried over from the old CodeWithTana mark. */
 .wordmark {
   display: inline-flex;
   align-items: baseline;
   line-height: 1;
 }
 
-.wordmark-code,
-.wordmark-tana {
+.wordmark-text {
   font-family: var(--font-display);
   font-variation-settings: 'SOFT' 60, 'WONK' 1;
-  font-style: italic;
   font-weight: 500;
   font-size: 1.42em;
-  letter-spacing: -0.005em;
+  letter-spacing: 0.02em;
   color: var(--accent);
   transition: color 0.45s var(--ease);
-}
-
-.wordmark-with {
-  margin-inline: 0.28em 0.2em;
-  font-size: 0.52em;
-  font-weight: 500;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--text-mute);
 }
 
 .wordmark-dot {
@@ -93,16 +83,14 @@
   align-self: baseline;
   width: 0.28em;
   height: 0.28em;
-  margin-left: 0.09em;
+  margin-left: 0.14em;
   border-radius: 50%;
   background: var(--accent);
   transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
 }
 
-.nav-logo:hover .wordmark-code,
-.nav-logo:hover .wordmark-tana,
-.footer-copy:hover .wordmark-code,
-.footer-copy:hover .wordmark-tana {
+.nav-logo:hover .wordmark-text,
+.footer-copy:hover .wordmark-text {
   color: var(--accent-strong);
 }
 
@@ -172,8 +160,8 @@
 
 /* Theme toggle */
 .theme-toggle {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid var(--line);
   display: inline-flex;
@@ -204,8 +192,8 @@
 /* Hamburger */
 .nav-toggle {
   display: none;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
@@ -545,8 +533,8 @@
 }
 
 .about-socials a {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -690,7 +678,9 @@
 /* ---------- Tools ---------- */
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  /* 170px left only 2px of headroom at the 390px gutter and flipped to
+     1 column on 375/360 phones; 150px keeps a comfortable 2 columns. */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 12px;
 }
 
@@ -1167,7 +1157,7 @@
   font-size: 1.25em;
 }
 
-/* Second wordmark in the line would announce "CodeWithTana" twice to screen
+/* Second wordmark in the line would announce "Etana" twice to screen
    readers, so the credit is decorative text only. */
 .footer-credit {
   display: inline-flex;
@@ -1329,8 +1319,20 @@
     border-top: none;
     padding-top: 0;
   }
+  /* The desktop 2-column chips fit on phones; 1 column just made two short
+     lines swim in a 354px pill. */
   .about-chips {
-    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 100%;
+  }
+  .tool-chip {
+    /* Reclaim width inside the pill so "Google Analytics" stays on one
+       line instead of stretching into a ragged 2-line capsule. */
+    padding: 14px 16px;
+    gap: 9px;
+  }
+  .testimonial-card {
+    padding: 26px 22px 22px;
   }
   .hero-portrait-badge {
     left: 0;
@@ -1339,11 +1341,26 @@
     flex-direction: column;
     text-align: center;
   }
+  /* The nowrap inline-flex line was ~470px wide and forced horizontal overflow
+     on phones, so let it wrap within the centered column. */
+  .footer-copy {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 10px;
+  }
+  .footer-credit {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   /* The copyright line stacks, so the credit border reads as a stray dash. */
   .footer-credit {
     border-left: none;
     padding-left: 0;
     margin-left: 0;
+  }
+  .footer-socials a {
+    width: 44px;
+    height: 44px;
   }
   .faq-question {
     padding: 18px 20px;
@@ -1357,9 +1374,13 @@
   }
 }
 
-@media (max-width: 380px) {
+/* Real phones are 360–430px wide; 380 missed most of them, so the CTAs
+   stretched on some handsets and floated centred on others. */
+@media (max-width: 460px) {
   .hero-actions {
     width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
   }
   .hero-actions .btn {
     flex: 1 1 auto;

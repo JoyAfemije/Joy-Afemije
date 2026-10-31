@@ -114,10 +114,10 @@ export default function PortfolioPage() {
             Every project, <em className="display-em">honestly</em> told.
           </Reveal>
           <Reveal as="p" delay={0.12}>
-            {brand.name} is the studio of a frontend and full-stack developer
-            in Lagos. Below is everything I&apos;ve designed and built: what I
-            did, the tools I used, the problems I met, and what each one taught
-            me.
+            {brand.name} builds frontend and full-stack web experiences for
+            founders and growing companies in Lagos. Below is everything I&apos;ve
+            designed and built: what I did, the tools I used, the problems I met,
+            and what each one taught me.
           </Reveal>
           <Reveal as="p" className="portfolio-count" delay={0.16}>
             Updated as I build
@@ -125,16 +125,15 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Jump rail */}
-      <div className="wrap">
-        <nav className="portfolio-index" aria-label="Project index">
-          {projects.map((p) => (
-            <a key={p.id} href={`#${p.id}`}>
-              {p.index} {p.title}
-            </a>
-          ))}
-        </nav>
-      </div>
+      {/* Jump rail: a direct child of <main> so its sticky range covers the
+          whole case-study scroll, not just one screen. */}
+      <nav className="portfolio-index" aria-label="Project index">
+        {projects.map((p) => (
+          <a key={p.id} href={`#${p.id}`}>
+            {p.index} {p.title}
+          </a>
+        ))}
+      </nav>
 
       <section>
         <div className="wrap case-studies">
