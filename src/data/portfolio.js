@@ -423,7 +423,7 @@ export const PROJECTS = [
       'The platform for The Tech Space Ltd, built for tech talents, hiring, and the founders and companies who share the vision.',
     image: './images/thetechspace.png',
     alt: 'The Tech Space platform screenshot',
-    live: 'https://thetechspaceltd.com/',
+    live: 'https://www.thetechspaceltd.com/',
     tags: ['Community', 'Landing Page', 'Events'],
     role: 'I led the dev team that built and shipped The Tech Space Ltd into production. The work was not only the code, it was making the purpose of the company come through on the screen.',
     actions: [
