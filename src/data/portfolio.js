@@ -512,7 +512,7 @@ export const PROJECTS = [
       'A marketing site for an AI-assisted support inbox, where replies are drafted before you even open them, with a human always in control.',
     image: './images/supportiq-ai.png',
     alt: 'SupportIQ AI support inbox landing page screenshot',
-    live: null, // still in development, the screenshot is from a local build
+    live: 'https://supportiqai.vercel.app/',
     tags: ['AI Product', 'Landing Page', 'Dark/Light Mode'],
     role: 'I collaborated with another developer across both the frontend and the backend, and built the full light/dark theming system.',
     actions: [
